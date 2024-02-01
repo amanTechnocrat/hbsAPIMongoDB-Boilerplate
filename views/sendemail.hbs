@@ -1,0 +1,20 @@
+{{>header}}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Forget Password</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form action="/forgetpassword" method="post" role="form" enctype="application/x-www-form-urlencoded">
+                <legend>Enter Login Credentials</legend>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" required class="form-control" name="email" id="email" placeholder="Email Address">
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

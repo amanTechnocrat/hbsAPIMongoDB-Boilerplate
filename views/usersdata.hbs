@@ -1,0 +1,41 @@
+{{>header}}
+{{#if token}}
+  <script type="text/javascript" async>
+    const token = '{{token}}';
+    localStorage.setItem("token", token)
+  </script>
+{{/if}}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile No</th>
+                <th scope="col">Profile Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                {{#each user
+                 as |val key|}}
+            <tr>
+                <th scope="row">{{key}}</th>
+                <td>{{val.firstName}}</td>
+                <td>{{val.lastName}}</td>
+                <td>{{val.email}}</td>
+                <td>{{val.mobileNo}}</td>
+                <td>
+                     <img src="/profileimg/{{val.userImage}}" width="40" height="40" class="rounded">
+                </td>
+                <td>
+                    <a href="/getuserbyid/{{val._id}}"  class="btn btn-primary">Edit</a>
+                    <a href="/deleteuser/{{val._id}}" onclick="return confirm('Are you sure to delete this record ?');" class="btn btn-danger" >Delete</a>
+                </td>
+            </tr>
+                {{/each}}
+        </tbody>
+    </table>
+</div>

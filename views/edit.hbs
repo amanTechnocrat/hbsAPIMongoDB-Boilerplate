@@ -1,0 +1,41 @@
+{{>header}}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Edit Form</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form action="/updateuser/{{userdata._id}}" method="post" role="form" enctype="multipart/form-data">
+                <legend>Edit Information Here</legend>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" required value="{{userdata.firstName}}" class="form-control" name="firstName" id="firstName" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" value="{{userdata.lastName}}" required class="form-control" name="lastName"
+                        id="lastName" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" value="{{userdata.email}}" required class="form-control" name="email" id="email"
+                        placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="mobileNo">Mobile No</label>
+                    <input type="number" value="{{userdata.mobileNo}}" placeholder="Mobile No" required
+                        class="form-control" name="mobileNo" id="mobileNo">
+                </div>
+                <div class="form-group">
+                    <label for="profileimg">Profile Photo</label>
+                    <input type="file" value="{{userdata.userImage}}" class="form-control" name="profileimg"
+                        id="profileimg" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

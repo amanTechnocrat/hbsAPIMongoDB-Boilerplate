@@ -1,0 +1,28 @@
+{{>header}}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Login Form</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form action="/loginapi" method="post" role="form" enctype="application/x-www-form-urlencoded">
+                <legend>Enter Login Credentials</legend>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" required class="form-control" name="email" id="email"
+                        placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="password">Registered Password</label>
+                    <input type="password" placeholder="Password" required class="form-control" name="password"
+                        id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="/forgetpasspage" class="btn btn-primary">Forget Password</a>
+            </form>
+        </div>
+    </div>
+</div>
